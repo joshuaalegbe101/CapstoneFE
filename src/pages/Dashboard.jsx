@@ -9,11 +9,8 @@ const Dashboard = () => {
     <div>
       <h1>Dashboard</h1>
 
-      <h2>Budget Summary</h2>
-      <p>Total Budget: $0</p>
-      <p>Total Spent: $0</p>
-      <p>Remaining Balance: $0</p>
-
+      {/* 🔹 Removed Budget Summary Section */}
+      
       <h2>Recent Transactions</h2>
       <p>No recent transactions.</p>
 
@@ -21,7 +18,7 @@ const Dashboard = () => {
       <Link to="/transactions">View All Transactions</Link> | 
       <Link to="/budgets">Manage Budgets</Link>
 
-      {/* 🔹 Add Transaction Form inside the Dashboard */}
+      {/* 🔹 Transaction Form */}
       <div style={{ marginTop: "20px" }}>
         <h2>Add a Transaction</h2>
         <TransactionForm onTransactionAdded={() => setRefresh(!refresh)} />
