@@ -26,7 +26,6 @@ const Budgets = () => {
         </div>
       )}
 
-      <h2>Existing Budgets</h2>
       <BudgetList refresh={refresh} />
     </div>
   );

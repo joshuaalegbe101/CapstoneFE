@@ -6,29 +6,29 @@ import { getToken, saveToken, removeToken } from "../utils/auth";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  // State to store user authentication details
+
   const [user, setUser] = useState(null);
 
-  // Check if a token exists in local storage when the component mounts
+
   useEffect(() => {
     const token = getToken();
     if (token) {
-      setUser({ token }); // Set user state if a valid token is found
+      setUser({ token }); 
     }
   }, []);
 
   // Function to log in a user
   const login = async (email, password) => {
-    const res = await loginUser({ email, password }); // Send login request
-    saveToken(res.data.token); // Save token in local storage
+    const res = await loginUser({ email, password }); 
+    saveToken(res.data.token); 
     setUser(res.data); 
   };
 
   // Function to log out a user
   const logout = () => {
-    removeToken(); // Remove token from local storage
-    setUser(null); // Clear user state
-    window.location.href = "/login"; // Redirect to login page after logout
+    removeToken(); 
+    setUser(null); 
+    window.location.href = "/login"; 
   };
 
   return (

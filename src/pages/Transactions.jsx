@@ -8,7 +8,6 @@ const Transactions = () => {
 
   return (
     <div>
-      <h1>Transactions</h1>
 
       {/* 🔹 Show form with transaction data if editing */}
       <h2>{editTransaction ? "Edit Transaction" : "Add a New Transaction"}</h2>
@@ -20,7 +19,6 @@ const Transactions = () => {
         editTransaction={editTransaction}
       />
 
-      <h2>All Transactions</h2>
       <TransactionList refresh={refresh} onEdit={(tx) => setEditTransaction(tx)} />
     </div>
   );
