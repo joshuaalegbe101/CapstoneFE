@@ -16,7 +16,7 @@ Expense Tracker is a personal finance management tool that allows users to **log
 * React.js
 * React Router
 * Axios
-* CSS3
+* CSS
 * HTML5
 
 ## <a name="features"></a>Features
@@ -25,12 +25,11 @@ Users are able to:
 - **Add, update, and delete transactions**
 - **View a list of all transactions**
 - **Set and manage budget categories**
-- **See a summary of spending habits**
 - **Use a simple and clean user interface**
 
 
 ## <a name="design"></a>Design
-The design follows **a minimal and clean financial dashboard layout**, ensuring ease of navigation and readability. **CSS3 and responsive design principles** are used to ensure usability across different screen sizes.
+The design follows **a minimal and clean financial dashboard layout**, ensuring ease of navigation and readability. **CSS and responsive design principles** are used to ensure usability across different screen sizes.
 
 
 ## <a name="nextsteps"></a>Project Next Steps
