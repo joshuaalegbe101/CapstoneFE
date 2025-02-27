@@ -28,10 +28,6 @@ Users are able to:
 - **See a summary of spending habits**
 - **Use a simple and clean user interface**
 
-## <a name="wireframes"></a>Wireframe Images
-* Below is an early wireframe of the Expense Tracker layout:
-<img src="path_to_wireframe.png" alt="Wireframe of Expense Tracker"/>
-
 
 ## <a name="design"></a>Design
 The design follows **a minimal and clean financial dashboard layout**, ensuring ease of navigation and readability. **CSS3 and responsive design principles** are used to ensure usability across different screen sizes.
