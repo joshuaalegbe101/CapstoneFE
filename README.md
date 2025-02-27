@@ -25,7 +25,6 @@ Users are able to:
 - **Add, update, and delete transactions**
 - **View a list of all transactions**
 - **Set and manage budget categories**
-- **See a summary of spending habits**
 - **Use a simple and clean user interface**
 
 
