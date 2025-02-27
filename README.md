@@ -29,7 +29,7 @@ Users are able to:
 
 
 ## <a name="design"></a>Design
-The design follows **a minimal and clean financial dashboard layout**, ensuring ease of navigation and readability. **CSS3 and responsive design principles** are used to ensure usability across different screen sizes.
+The design follows **a minimal and clean financial dashboard layout**, ensuring ease of navigation and readability. **CSS and responsive design principles** are used to ensure usability across different screen sizes.
 
 
 ## <a name="nextsteps"></a>Project Next Steps
