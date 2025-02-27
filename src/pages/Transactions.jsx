@@ -1,36 +1,27 @@
-import { useEffect, useState } from "react";
-import { fetchTransactions } from "../services/api";
-import { getToken } from "../utils/auth";
+import TransactionList from "../components/TransactionList";
+import TransactionForm from "../components/TransactionForm";
+import { useState } from "react";
 
 const Transactions = () => {
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(() => {
-    const loadTransactions = async () => {
-      try {
-        const token = getToken();
-        if (token) {
-          const res = await fetchTransactions(token);
-          setTransactions(res.data);
-        }
-      } catch (error) {
-        console.error("Error fetching transactions:", error);
-      }
-    };
-
-    loadTransactions();
-  }, []);
+  const [refresh, setRefresh] = useState(false);
+  const [editTransaction, setEditTransaction] = useState(null);
 
   return (
     <div>
-      <h2>Your Transactions</h2>
-      <ul>
-        {transactions.map((tx) => (
-          <li key={tx._id}>
-            {tx.category} - ${tx.amount} ({tx.type})
-          </li>
-        ))}
-      </ul>
+      <h1>Transactions</h1>
+
+      {/* 🔹 Show form with transaction data if editing */}
+      <h2>{editTransaction ? "Edit Transaction" : "Add a New Transaction"}</h2>
+      <TransactionForm
+        onTransactionAdded={() => {
+          setRefresh(!refresh);
+          setEditTransaction(null); // Reset after editing
+        }}
+        editTransaction={editTransaction}
+      />
+
+      <h2>All Transactions</h2>
+      <TransactionList refresh={refresh} onEdit={(tx) => setEditTransaction(tx)} />
     </div>
   );
 };

@@ -1,36 +1,33 @@
-import { useEffect, useState } from "react";
-import { fetchBudgets } from "../services/api";
-import { getToken } from "../utils/auth";
+import { useState } from "react";
+import BudgetList from "../components/BudgetList";
+import BudgetForm from "../components/BudgetForm";
 
 const Budgets = () => {
-  const [budgets, setBudgets] = useState([]);
-
-  useEffect(() => {
-    const loadBudgets = async () => {
-      try {
-        const token = getToken();
-        if (token) {
-          const res = await fetchBudgets(token);
-          setBudgets(res.data);
-        }
-      } catch (error) {
-        console.error("Error fetching budgets:", error);
-      }
-    };
-
-    loadBudgets();
-  }, []);
+  const [showForm, setShowForm] = useState(false);
+  const [refresh, setRefresh] = useState(false);
 
   return (
     <div>
-      <h2>Your Budgets</h2>
-      <ul>
-        {budgets.map((budget) => ( 
-          <li key={budget._id}>
-            {budget.category} - ${budget.limit} ({budget.startDate} to {budget.endDate})
-          </li>
-        ))}
-      </ul>
+      <h1>Manage Budgets</h1>
+
+      {/* 🔹 Add Budget Button */}
+      <button onClick={() => setShowForm(!showForm)}>
+        {showForm ? "Cancel" : "Add Budget"}
+      </button>
+
+      {/* 🔹 Show BudgetForm When Button is Clicked */}
+      {showForm && (
+        <div>
+          <h2>Add a New Budget</h2>
+          <BudgetForm onBudgetAdded={() => {
+            setShowForm(false); 
+            setRefresh(!refresh); 
+          }} />
+        </div>
+      )}
+
+      <h2>Existing Budgets</h2>
+      <BudgetList refresh={refresh} />
     </div>
   );
 };
