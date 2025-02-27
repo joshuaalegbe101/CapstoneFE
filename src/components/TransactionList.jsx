@@ -20,7 +20,7 @@ const TransactionList = ({ refresh, onEdit }) => {
     };
 
     loadTransactions();
-  }, [refresh]); // 🔥 Reacts to changes in `refresh`
+  }, [refresh]); 
 
   // Delete a transaction
   const handleDelete = async (id) => {
