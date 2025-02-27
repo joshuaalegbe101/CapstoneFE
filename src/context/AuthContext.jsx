@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = getToken();
     if (token) {
-      setUser({ token }); // Decode for more info if needed
+      setUser({ token });
     }
   }, []);
 
@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     removeToken();
     setUser(null);
+    window.location.href = "/login";
   };
 
   return (
