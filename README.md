@@ -16,7 +16,7 @@ Expense Tracker is a personal finance management tool that allows users to **log
 * React.js
 * React Router
 * Axios
-* CSS3
+* CSS
 * HTML5
 
 ## <a name="features"></a>Features
