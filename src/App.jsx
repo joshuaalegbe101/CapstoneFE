@@ -7,6 +7,7 @@ import Budgets from "./pages/Budgets";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PrivateRoute from "./components/PrivateRoute";
+import "./App.css"
 
 function App() {
   return (

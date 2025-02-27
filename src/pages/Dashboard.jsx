@@ -6,11 +6,9 @@ const Dashboard = () => {
   const [refresh, setRefresh] = useState(false);
 
   return (
-    <div>
+    <div className="container"> 
       <h1>Dashboard</h1>
 
-      {/* 🔹 Removed Budget Summary Section */}
-      
       <h2>Recent Transactions</h2>
       <p>No recent transactions.</p>
 
@@ -18,7 +16,6 @@ const Dashboard = () => {
       <Link to="/transactions">View All Transactions</Link> | 
       <Link to="/budgets">Manage Budgets</Link>
 
-      {/* 🔹 Transaction Form */}
       <div style={{ marginTop: "20px" }}>
         <h2>Add a Transaction</h2>
         <TransactionForm onTransactionAdded={() => setRefresh(!refresh)} />
